@@ -1,4 +1,4 @@
-@Library('kafka-shared-lib') _
+@Library('Kafka-shared-lib') _
 
 def config = readYaml text: libraryResource('kafka-config.yaml')
 
