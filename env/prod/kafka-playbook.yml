@@ -1,0 +1,9 @@
+---
+- name: Kafka deployment playbook (demo)
+  hosts: kafka
+  become: false
+  tasks:
+    - name: Print Kafka deployment message
+      debug:
+        msg: "Kafka Ansible playbook executed successfully"
+
