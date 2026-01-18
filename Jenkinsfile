@@ -1,10 +1,14 @@
 @Library('Kafka-shared-lib') _
 
-def yamlText = libraryResource('kafka-config.yaml')
-def config   = readYaml(text: yamlText)
+node {
+    script {
+        def yamlText = libraryResource('kafka-config.yaml')
+        def config   = readYaml(text: yamlText)
 
-config.REPO_URL = 'https://github.com/Devansh-Chaudhary-git/kafka-ansible-deployment.git'
-config.BRANCH   = 'main'
+        config.REPO_URL = 'https://github.com/Devansh-Chaudhary-git/kafka-ansible-deployment.git'
+        config.BRANCH   = 'main'
 
-kafkaAnsiblePipeline(config)
+        kafkaAnsiblePipeline(config)
+    }
+}
 
